@@ -18,7 +18,341 @@ body.dark-mode {
   background-color: #1a1a1a;
   color: white;
 }
+.popSc{position:fixed;top:0;bottom:0;left:0;right:0;padding:20px;background:rgba(255, 255, 255, 0.1);z-index:99980;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;justify-content:center;align-items:center}
+.popSc.hidden{display:none}
+.popSc .popBo{position:relative;background:rgba(255, 255, 255, 0.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);max-width:400px;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:30px;border-radius:20px;box-shadow:0 5px 25px rgb(0 0 0 / 20%)}
+.popSc .popBo svg{display:block;width:50px;height:50px;fill:none !important;stroke:#08102b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+.popSc .popBo h2{margin:10px 0 15px 0;font-size:1.2rem;font-weight:800;color:#08102b}
+.popSc .popBo p{margin:0;line-height:1.7em;font-size:0.9rem;color:#08102b}
+.popSc .popBo .popBtn{display:inline-flex;justify-content:center;align-items:center;height:50px;width:50px;outline:none;border:none;background:#482dff;border-radius:50%;margin-top:20px;transition:all .2s ease;-webkit-transition:all .2s ease}
+.popSc .popBo .popBtn:hover{transform:scale(1.05);-webkit-transform:scale(1.05)}
+.popSc .popBo .popBtn svg{width:24px;height:24px;stroke:#fff;flex-shrink:0}
+.popSc .popBo .popBtn svg.r{animation:rotateIcn 1.5s infinite linear;-webkit-animation:rotateIcn 1.5s infinite linear}
+.popSc{animation:popupBlur .3s ease-in; -webkit-animation:popupBlur .3s}
+.popSc >*{animation:popupScale .3s ease-in; -webkit-animation:popupScale .3s}
+.darkMode .popSc{background:rgba(0, 0, 0, 0.1)}
+.darkMode .popSc .popBo{background:rgba(50, 50, 50, 0.8)}
+.darkMode .popSc .popBo svg{stroke:#fefefe}
+.darkMode .popSc .popBo p, .darkMode .popSc .popBo h2{color:#fefefe}
+@keyframes popupBlur {from{opacity:0}to{opacity:1}}
+@-webkit-keyframes popupBlur{from{opacity:0}to{opacity:1}}
+@keyframes popupScale{from{transform:scale(0);animation-timing-function:ease-in;opacity:0}to{transform:scale(1);opacity:1}}
+@-webkit-keyframes popupScale{from{-webkit-transform:scale(0);-webkit-animation-timing-function: ease-in;opacity:0}to{-webkit-transform:scale(1);opacity:1}}
+@keyframes rotateIcn{from{transform:rotate(0deg)} to{transform:rotate(359deg)}}
+@-webkit-keyframes rotateIcn{from{-webkit-transform:rotate(0deg)} to{-webkit-transform:rotate(359deg)}}
 
+/* Updated Theme Switch with Icons */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.theme-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.theme-switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.theme-switch input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Sun and Moon Icons */
+.theme-switch .sun-icon,
+.theme-switch .moon-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.theme-switch .sun-icon {
+  left: 8px;
+  color: #FDB813;
+  opacity: 1;
+}
+
+.theme-switch .moon-icon {
+  right: 8px;
+  color: #F1C40F;
+  opacity: 0.5;
+}
+
+.theme-switch input:checked ~ .sun-icon {
+  opacity: 0.5;
+}
+
+.theme-switch input:checked ~ .moon-icon {
+  opacity: 1;
+}
+
+/* Search Toggle Button */
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;        /* full white */
+  transition: all 0.3s;
+}
+
+/* Keep white on hover too */
+.search-toggle:hover {
+  color: #fff !important;        /* stay white */
+  transform: scale(1.1);
+}
+
+/* Icon size control */
+.search-toggle i,
+.search-toggle svg {
+  width: 28px;
+  height: 28px;
+  stroke: #fff !important;       /* for lucide svg */
+  color: #fff !important;        /* fallback */
+}
+
+
+/* Search Overlay */
+.search-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateY(-100%);
+  padding: 8px 0;
+}
+
+.search-overlay.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.search-overlay-content {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.search-overlay .search-box {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 60px;
+}
+
+.search-overlay .search-box-inner {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 0 15px;
+}
+
+.search-overlay .search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  background: transparent;
+  color: white;
+  font-weight: 300;
+  padding: 15px 80px 15px 25px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.search-overlay .search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24px;
+}
+
+.search-close {
+  position: absolute;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  cursor: pointer;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.search-close i {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.5;
+}
+
+.search-overlay .search-results {
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
+  max-height: 70vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: none;
+  z-index: 1000;
+}
+
+.search-overlay .search-results:not(:empty) {
+  display: block;
+}
+
+/* Adjust header z-index */
+.site-header {
+  position: relative;
+  z-index: 998;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .search-toggle {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-overlay {
+    padding: 8px 0;
+  }
+  
+  .search-overlay-content {
+    padding: 0;
+  }
+  
+  .search-overlay .search-box {
+    min-height: 55px;
+  }
+  
+  .search-overlay .search-box-inner {
+    margin: 0 10px;
+  }
+  
+  .search-overlay .search-box input {
+    font-size: 20px;
+    padding: 12px 70px 12px 20px;
+  }
+  
+  .search-overlay .search-box input::placeholder {
+    font-size: 20px;
+  }
+  
+  .search-close {
+    width: 40px;
+    height: 40px;
+    right: 6px;
+  }
+  
+  .search-close i {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-overlay-content {
+    width: 95%;
+  }
+  
+  .search-overlay .search-box input {
+    font-size: 18px;
+  }
+  
+  .search-close {
+    top: -45px;
+  }
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+.site-header {
+  background: linear-gradient(45deg, #000000, #050505) !important;
+  padding: 10px 20px !important;
+  position: relative !important;
+  z-index: 999 !important;
+}
+
+.header-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+
+.logo img {
+  height: 40px !important;
+  width: auto !important;
+}
+
+.header-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+}
 /* ============================================
    UNIVERSAL RESET & BASE STYLES
    ============================================ */
@@ -1110,3 +1444,4 @@ body.dark-mode .free-user-popup-content {
   }
 
 }
+
