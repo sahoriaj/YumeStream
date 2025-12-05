@@ -1,3 +1,4 @@
+
 /* Light mode (default) */
 body {
   background-color: white;
@@ -1107,4 +1108,5 @@ body.dark-mode .free-user-popup-content {
     width: 16px;
     height: 16px;
   }
+
 }
