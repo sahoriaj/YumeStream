@@ -1445,12 +1445,11 @@ body.dark-mode .free-user-popup-content {
     width: 16px;
     height: 16px;
   }
-
 }
-/* ============================================
-   FOOTER STYLES
-   ============================================ */
 
+/* ============================================
+   FOOTER BASE
+   ============================================ */
 .site-footer {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #e0e0e0;
@@ -1474,6 +1473,7 @@ body.dark-mode .free-user-popup-content {
   flex-direction: column;
 }
 
+/* Logo */
 .footer-logo {
   display: inline-block;
   margin-bottom: 15px;
@@ -1491,6 +1491,7 @@ body.dark-mode .free-user-popup-content {
   display: block;
 }
 
+/* Description */
 .footer-description {
   font-size: 14px;
   line-height: 1.6;
@@ -1499,7 +1500,7 @@ body.dark-mode .free-user-popup-content {
 }
 
 /* ============================================
-   FOOTER HEADING
+   HEADINGS
    ============================================ */
 .footer-heading {
   font-size: 16px;
@@ -1519,7 +1520,7 @@ body.dark-mode .free-user-popup-content {
 }
 
 /* ============================================
-   FOOTER LINKS
+   LINKS
    ============================================ */
 .footer-links {
   list-style: none;
@@ -1528,10 +1529,6 @@ body.dark-mode .free-user-popup-content {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-.footer-links li {
-  margin: 0;
 }
 
 .footer-link {
@@ -1616,7 +1613,7 @@ body.dark-mode .free-user-popup-content {
 }
 
 /* ============================================
-   DARK MODE FOOTER
+   DARK MODE SUPPORT
    ============================================ */
 body.dark-mode .site-footer {
   background: linear-gradient(135deg, #0a0e27 0%, #0f1419 100%);
@@ -1629,6 +1626,10 @@ body.dark-mode .footer-heading {
 
 body.dark-mode .footer-heading i {
   color: #00ff9d;
+}
+
+body.dark-mode .footer-link {
+  color: #cccccc;
 }
 
 body.dark-mode .footer-link i {
@@ -1655,8 +1656,12 @@ body.dark-mode .footer-bottom i {
   color: #00ff9d;
 }
 
+body.dark-mode .footer-description {
+  color: #bbbbbb;
+}
+
 /* ============================================
-   RESPONSIVE DESIGN - TABLET
+   RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
   .site-footer {
@@ -1676,10 +1681,6 @@ body.dark-mode .footer-bottom i {
     font-size: 13px;
   }
 
-  .social-links {
-    gap: 12px;
-  }
-
   .social-link {
     width: 45px;
     height: 45px;
@@ -1691,9 +1692,6 @@ body.dark-mode .footer-bottom i {
   }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - MOBILE
-   ============================================ */
 @media (max-width: 480px) {
   .site-footer {
     padding: 30px 0 10px;
@@ -1717,7 +1715,6 @@ body.dark-mode .footer-bottom i {
 
   .footer-description {
     font-size: 12px;
-    line-height: 1.5;
   }
 
   .social-links {
@@ -1737,3 +1734,7 @@ body.dark-mode .footer-bottom i {
   }
 }
 
+/* Fix container overflow issues */
+.container {
+  overflow: visible !important;
+}
