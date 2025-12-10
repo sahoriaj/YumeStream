@@ -1235,10 +1235,6 @@ body.dark-mode .play-icon {
   color: #000;
 }
 
-body.dark-mode .anime-card-image {
-  box-shadow: 0 5px 20px rgba(0, 255, 157, 0.2);
-}
-
 body.dark-mode .pagination a,
 body.dark-mode .pagination span {
   background: rgba(255, 255, 255, 0.05);
@@ -1737,4 +1733,5 @@ body.dark-mode .footer-description {
 .container {
   overflow: visible !important;
 }
+
 
