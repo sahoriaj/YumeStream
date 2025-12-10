@@ -790,7 +790,6 @@ body {
   overflow: hidden;
   background: #f0f0f0;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .anime-card-image img {
@@ -1738,3 +1737,4 @@ body.dark-mode .footer-description {
 .container {
   overflow: visible !important;
 }
+
