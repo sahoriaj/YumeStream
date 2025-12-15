@@ -515,10 +515,6 @@ body {
   transition: transform 0.2s ease;
 }
 
-.nav-menu ul li a:hover i {
-  transform: scale(1.1);
-}
-
 /* ============================================
    CONTAINER & LAYOUT
    ============================================ */
@@ -1729,6 +1725,7 @@ body.dark-mode .footer-description {
 .container {
   overflow: visible !important;
 }
+
 
 
 
