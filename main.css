@@ -461,12 +461,8 @@ body {
   transition: transform 0.3s ease;
 }
 
-.nav-toggle:hover {
-  transform: scale(1.1);
-}
-
 .nav-menu {
-  position: fixed;
+  position: absolute;
   top: 70px;
   left: -240px;
   width: 130px;
@@ -1733,5 +1729,6 @@ body.dark-mode .footer-description {
 .container {
   overflow: visible !important;
 }
+
 
 
