@@ -768,7 +768,6 @@ body {
 
 .anime-card {
   background: transparent;
-  border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -1725,6 +1724,7 @@ body.dark-mode .footer-description {
 .container {
   overflow: visible !important;
 }
+
 
 
 
