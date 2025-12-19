@@ -919,17 +919,16 @@ body {
 }
 
 @media (max-width: 480px) {
-    .status-badge {
+ .status-badge {
         width: 140px;
         font-size: 11px;
         top: 10px;
         left: -42px;
-
+        padding: 0;
         line-height: 26px;     /* 🔑 text vertically center */
-        padding-top: 1px;     /* 🔑 text thoda upar */
+        padding-top: 1px;      /* 🔑 text thoda upar */
         text-align: center;
     }
-}
 
 @media (max-width: 768px) {
     .status-badge {
@@ -2700,6 +2699,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
