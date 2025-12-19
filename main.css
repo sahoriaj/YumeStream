@@ -999,17 +999,17 @@ body.dark-mode .anime-card-title {
     }
     
     .badge-container {
-        width: 85px;
-        height: 85px;
+        width: 90px;
+        height: 90px;
     }
     
     .status-badge {
-        top: 16px;
-        left: -30px;
-        width: 120px;
-        height: 20px;
-        font-size: 8px;
-        letter-spacing: 0.3px;
+        top: 18px;
+        left: -38px;
+        width: 130px;
+        height: 22px;
+        font-size: 9px;
+        letter-spacing: 0.4px;
     }
     
     .anime-card-title {
@@ -1036,17 +1036,17 @@ body.dark-mode .anime-card-title {
     }
     
     .badge-container {
-        width: 80px;
-        height: 80px;
+        width: 85px;
+        height: 85px;
     }
     
     .status-badge {
-        top: 14px;
-        left: -28px;
-        width: 110px;
-        height: 18px;
-        font-size: 7px;
-        letter-spacing: 0.2px;
+        top: 16px;
+        left: -35px;
+        width: 120px;
+        height: 20px;
+        font-size: 8px;
+        letter-spacing: 0.3px;
     }
     
     .episode-badge {
@@ -2789,6 +2789,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
