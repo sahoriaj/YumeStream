@@ -938,18 +938,21 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
 
-    line-height: 1.4;
-    min-height: calc(1.4em * 2); /* 🔑 exact 2 lines */
-    max-height: calc(1.4em * 2);
+    line-height: 1.5;          /* 🔑 slightly more space */
+    height: auto;              /* 🔑 very important */
 
     color: #ffffff;
     text-align: center;
     margin: 0;
     padding: 0 3px;
-
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+@media (max-width: 480px) {
+    .anime-card-title {
+        font-size: 14px !important;
+        line-height: 1.6;   /* 🔥 THIS fixes half cut */
+    }
+}
 
 /* Light Mode */
 body.light-mode .anime-card-title,
@@ -2793,6 +2796,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
