@@ -1,4 +1,14 @@
+/* Main Content Styling */
+.main-content {
+    min-height: 100vh;
+    padding: 2rem 0;
+}
 
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 /* Light mode (default) */
 body {
   background-color: white;
@@ -980,24 +990,26 @@ body {
     border-radius: 6px;
     border-top-right-radius: 0;
 }
+/* Card Info */
 .anime-card-info {
-  padding: 12px 0;
-  background: transparent;
+    padding: 12px 6px 8px;
+    background: transparent;
 }
 
 .anime-card-title {
-  font-size: 14px;
-  font-weight: 600;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 40px;
-  line-height: 1.3;
-  color: #333;
-  text-align: center;
-  margin: 8px 0 0 0;
-  padding: 0 4px;
+    font-size: 13px;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 36px;
+    line-height: 1.35;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0 3px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 /* ============================================
@@ -1343,11 +1355,6 @@ body.dark-mode .free-user-popup-content {
     padding: 3px 8px;
     font-size: 9px;
     gap: 3px;
-  }
-  
-  .status-badge i {
-    width: 8px;
-    height: 8px;
   }
   
   .feature-badge {
@@ -2672,4 +2679,5 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
