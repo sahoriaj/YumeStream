@@ -1015,6 +1015,15 @@ body {
     padding: 0 3px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    
+    .anime-card-title {
+        font-size: 15px;
+    }
+}
+
 /* Light Mode */
 body.light-mode .anime-card-title,
 body:not(.dark-mode) .anime-card-title {
@@ -2691,6 +2700,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
