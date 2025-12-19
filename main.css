@@ -841,113 +841,145 @@ body {
   }
 }
 
-/* Badge System */
+/* Badge Container */
 .badge-container {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  z-index: 2;
+    position: absolute;
+    top: -5px;
+    left: 6px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: calc(100% - 70px);
 }
 
 .status-badge {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 14px;
+    left: -60px;              /* safe value */
+    width: 150px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    line-height: 1;
+
+    border-radius: 0;
+    transform: rotate(-45deg);
+    transform-origin: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    z-index: 5;               /* ensure above image */
 }
 
-.status-badge i {
-  width: 12px;
-  height: 12px;
+.anime-card,
+.anime-card-image {
+    position: relative;
 }
 
-.status-badge.ongoing {
-  background: linear-gradient(45deg, #00ff42, #000);
-}
-
+/* Completed */
 .status-badge.completed {
-  background: linear-gradient(45deg, #4100cd, #0e002d);
+    background: linear-gradient(135deg, #e53935, #b71c1c);
+    color: #ffffff;
 }
+
+/* Ongoing */
+.status-badge.ongoing {
+    background: linear-gradient(135deg, #7c3aed, #4c1d95);
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .anime-card .status-badge {
+        width: 120px !important;
+        height: 24px !important;
+
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+
+        /* 🔑 REAL CENTER FIX */
+        line-height: 24px !important;   /* SAME AS HEIGHT */
+        text-align: center !important;
+
+        display: block !important;      /* ❌ flex hatao */
+        padding: 0 !important;
+
+        transform: rotate(-45deg) !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .status-badge {
+        left: -70px;
+        width: 145px;
+        height: 25px;
+        font-size: 11px;
+    }
+}
+/* =========================
+   HOT / NEW FIRE ICON
+   ========================= */
 
 .feature-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  text-transform: uppercase;
-  z-index: 2;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+    z-index: 4;
 }
 
-.feature-badge i {
-  width: 12px;
-  height: 12px;
+.feature-badge .fire-icon,
+.feature-badge svg {
+    width: 16px;
+    height: 16px;
+    color: #ffffff;
+}
+
+/* Slight difference if you want */
+.feature-badge.new {
+    background: rgba(239, 68, 68, 0.9);
 }
 
 .feature-badge.hot {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  animation: hotPulse 2s infinite;
+    background: linear-gradient(135deg, #dc2626, #991b1b);
 }
-
-.feature-badge.new {
-  background: linear-gradient(135deg, #4ecdc4, #44a08d);
-}
-
-@keyframes hotPulse {
-  0%,
-  100% {
-    box-shadow: 0 2px 8px rgba(255, 65, 108, 0.5);
-  }
-  50% {
-    box-shadow: 0 4px 16px rgba(255, 65, 108, 0.8);
-  }
-}
-
+/* Episode Badge */
 .episode-badge {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(135deg, #ff0000 30%, #3a0000 90%);
-  color: #fff;
-  padding: 0.35em 1em 0.5em 0.5em;
-  border-radius: 8px 6px 0 0;
-  font-size: 0.85rem;
-  font-weight: 700;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: -1px;
+    right: -2px;
+    background: #dc2626;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 2;
+    white-space: nowrap;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 6px;
+    border-top-right-radius: 0;
 }
-
-.episode-badge i {
-  color: #4ecdc4;
-  width: 14px;
-  height: 14px;
-}
-
 .anime-card-info {
   padding: 12px 0;
   background: transparent;
@@ -2640,3 +2672,4 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
