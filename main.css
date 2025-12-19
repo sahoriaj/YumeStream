@@ -1001,7 +1001,7 @@ body {
 }
 
 .anime-card-title {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1020,7 +1020,7 @@ body {
 @media (max-width: 480px) {
     
     .anime-card-title {
-        font-size: 15px;
+        font-size: 18px;
     }
 }
 
@@ -2700,6 +2700,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
