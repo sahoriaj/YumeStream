@@ -884,8 +884,10 @@ body {
     position: absolute;
     top: 20px;
     left: -35px;
-    width: 140px;
+    min-width: 140px;
+    width: auto;
     height: 24px;
+    padding: 0 15px;
     
     display: flex;
     align-items: center;
@@ -898,6 +900,7 @@ body {
     letter-spacing: 0.5px;
     line-height: 1;
     color: #ffffff;
+    white-space: nowrap;
     
     transform: rotate(-45deg);
     transform-origin: center;
@@ -975,8 +978,10 @@ body.dark-mode .anime-card-title {
     .status-badge {
         top: 18px;
         left: -32px;
-        width: 130px;
+        min-width: 130px;
+        width: auto;
         height: 22px;
+        padding: 0 12px;
         font-size: 9px;
         letter-spacing: 0.4px;
         text-align: center;
@@ -1073,6 +1078,7 @@ body.dark-mode .anime-card-title {
         transform: translateY(-5px);
     }
 }
+
 /* =========================
    HOT / NEW FIRE ICON
    ========================= */
@@ -2793,6 +2799,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
