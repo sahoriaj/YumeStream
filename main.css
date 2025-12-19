@@ -1005,7 +1005,7 @@ body.dark-mode .anime-card-title {
     
     .status-badge {
         top: 18px;
-        left: -38px;
+        left: -44px;
         width: 130px;
         height: 22px;
         font-size: 9px;
@@ -1042,7 +1042,7 @@ body.dark-mode .anime-card-title {
     
     .status-badge {
         top: 16px;
-        left: -35px;
+        left: -37px;
         width: 120px;
         height: 20px;
         font-size: 8px;
@@ -2789,6 +2789,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
