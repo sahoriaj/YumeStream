@@ -950,15 +950,6 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-@media (max-width: 480px) {
-    .anime-card-title {
-        font-size: 14px !important;
-        line-height: 1.45;
-        min-height: calc(1.45em * 2);
-        max-height: calc(1.45em * 2);
-    }
-}
-
 
 /* Light Mode */
 body.light-mode .anime-card-title,
@@ -2802,6 +2793,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
