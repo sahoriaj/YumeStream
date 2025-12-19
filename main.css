@@ -273,6 +273,19 @@ body.dark-mode {
   display: block;
 }
 
+/* Light Mode */
+body.light-mode .anime-card-title,
+body:not(.dark-mode) .anime-card-title {
+    color: #1f2937;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+/* Dark Mode */
+body.dark-mode .anime-card-title {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
 /* Adjust header z-index */
 .site-header {
   position: relative;
@@ -2670,6 +2683,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
