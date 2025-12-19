@@ -924,6 +924,10 @@ body {
         font-size: 11px;
         top: 10px;
         left: -42px;
+
+        line-height: 26px;     /* 🔑 text vertically center */
+        padding-top: 1px;     /* 🔑 text thoda upar */
+        text-align: center;
     }
 }
 
@@ -2696,6 +2700,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
