@@ -920,14 +920,10 @@ body {
 
 @media (max-width: 480px) {
     .status-badge {
-        width: 120px;
-        height: 22px;
-        left: -50px;
-        top: 20px;
-    }
-
-    .status-badge .status-text {
-        font-size: 9.5px;
+        width: 140px;
+        font-size: 11px;
+        top: 10px;
+        left: -42px;
     }
 }
 
@@ -2700,6 +2696,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
