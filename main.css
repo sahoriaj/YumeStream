@@ -931,7 +931,7 @@ body {
 }
 
 .anime-card-title {
-    font-size: 13px;
+    font-size: 15px !important;
     font-weight: 600;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1021,7 +1021,7 @@ body.dark-mode .anime-card-title {
     }
     
     .anime-card-title {
-        font-size: 12px;
+        font-size: 15px !important;
         min-height: 32px;
     }
     
@@ -1065,17 +1065,6 @@ body.dark-mode .anime-card-title {
     
     .feature-badge::before {
         font-size: 20px;
-    }
-}
-
-/* Hover Effects */
-@media (hover: hover) {
-    .anime-card:hover .anime-card-image img {
-        transform: scale(1.05);
-    }
-    
-    .anime-card:hover {
-        transform: translateY(-5px);
     }
 }
 
@@ -2799,6 +2788,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
