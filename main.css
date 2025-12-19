@@ -890,6 +890,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     
     font-size: 10px;
     font-weight: 700;
@@ -978,6 +979,7 @@ body.dark-mode .anime-card-title {
         height: 22px;
         font-size: 9px;
         letter-spacing: 0.4px;
+        text-align: center;
     }
     
     .play-icon {
@@ -999,17 +1001,18 @@ body.dark-mode .anime-card-title {
     }
     
     .badge-container {
-        width: 90px;
-        height: 90px;
+        width: 95px;
+        height: 95px;
     }
     
     .status-badge {
-        top: 18px;
-        left: -44px;
-        width: 130px;
-        height: 22px;
+        top: 20px;
+        left: -42px;
+        width: 135px;
+        height: 24px;
         font-size: 9px;
         letter-spacing: 0.4px;
+        text-align: center;
     }
     
     .anime-card-title {
@@ -1036,17 +1039,18 @@ body.dark-mode .anime-card-title {
     }
     
     .badge-container {
-        width: 85px;
-        height: 85px;
+        width: 90px;
+        height: 90px;
     }
     
     .status-badge {
-        top: 16px;
-        left: -37px;
-        width: 120px;
-        height: 20px;
+        top: 18px;
+        left: -40px;
+        width: 130px;
+        height: 22px;
         font-size: 8px;
         letter-spacing: 0.3px;
+        text-align: center;
     }
     
     .episode-badge {
@@ -2789,6 +2793,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
