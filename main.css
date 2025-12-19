@@ -906,14 +906,39 @@ body {
 }
 
 @media (max-width: 480px) {
-    .status-badge {
-        width: 120px;
-        height: 22px;
-        left: -50px;
+
+    /* FORCE ribbon look */
+    .anime-card .status-badge {
+        position: absolute !important;
+        top: 10px !important;
+        left: -55px !important;
+
+        width: 135px !important;
+        height: 26px !important;
+
+        border-radius: 0 !important;          /* ❌ pill remove */
+        padding: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+
+        transform: rotate(-45deg) !important; /* ✅ ribbon */
+        line-height: 1 !important;
     }
 
-    .status-badge .status-text {
-        font-size: 9.5px;
+    /* ensure no pill/text wrapper interference */
+    .anime-card .status-badge .status-text {
+        all: unset;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
     }
 }
 
@@ -2669,6 +2694,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
