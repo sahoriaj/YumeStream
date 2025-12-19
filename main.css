@@ -938,7 +938,7 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     min-height: 36px;
-    line-height: 1.35;
+    line-height: 1.2;
     color: #ffffff;
     text-align: center;
     margin: 0;
@@ -2788,6 +2788,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
