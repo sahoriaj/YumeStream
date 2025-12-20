@@ -454,7 +454,7 @@ body.dark-mode .search-toggle {
 
 .status-badge {
   position: absolute;
-  top: 1px;
+  top: -10px;
   left: -48px;
 
   width: 165px;
@@ -462,10 +462,10 @@ body.dark-mode .search-toggle {
 
   /* 🔥 REAL CENTERING METHOD */
   text-align: center;
-  line-height: 26px;          /* SAME as height */
+  line-height: 25px;          /* SAME as height */
   
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 400;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #ffffff;
@@ -491,7 +491,7 @@ body.dark-mode .search-toggle {
     height: 24px;
     line-height: 24px;   /* 🔑 THIS is the key */
     font-size: 10px;
-    left: -45px;
+    left: -48px;
   }
 }
 
@@ -2622,6 +2622,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
