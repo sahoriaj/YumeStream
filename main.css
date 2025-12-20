@@ -1396,54 +1396,6 @@ body.dark-mode .free-user-popup-content {
     text-align: center;
   }
   
-  .anime-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
-  }
-  
-  .anime-card-title {
-    font-size: 12px;
-    min-height: 30px;
-    -webkit-line-clamp: 2;
-  }
-  
-  .badge-container {
-    top: 4px;
-    left: 4px;
-    gap: 4px;
-  }
-  
-  .status-badge {
-    padding: 3px 8px;
-    font-size: 9px;
-    gap: 3px;
-  }
-  
-  .feature-badge {
-    top: 4px;
-    right: 4px;
-    padding: 3px 6px;
-    font-size: 9px;
-    gap: 3px;
-  }
-  
-  .feature-badge i {
-    width: 9px;
-    height: 9px;
-  }
-  
-  .episode-badge {
-    bottom: 4px;
-    right: 4px;
-    padding: 4px 8px;
-    font-size: 13px;
-    gap: 3px;
-  }
-  
-  .episode-badge i {
-    width: 15px;
-    height: 15px;
-  }
   
   .pagination {
     gap: 5px;
@@ -1453,59 +1405,6 @@ body.dark-mode .free-user-popup-content {
   .pagination span {
     padding: 10px 14px;
     font-size: 14px;
-  }
-  
-
-@media (max-width: 480px) {
-  .anime-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  
-  .anime-card-title {
-    font-size: 11px;
-    min-height: 30px;
-    padding: 8px 2px;
-  }
-  
-  .badge-container {
-    top: 3px;
-    left: 3px;
-    gap: 3px;
-  }
-  
-  .status-badge {
-    padding: 2px 6px;
-    font-size: 8px;
-  }
-  
-  .status-badge i {
-    width: 7px;
-    height: 7px;
-  }
-  
-  .feature-badge {
-    top: 3px;
-    right: 3px;
-    padding: 2px 5px;
-    font-size: 8px;
-  }
-  
-  .feature-badge i {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .episode-badge {
-    bottom: 3px;
-    right: 3px;
-    padding: 3px 6px;
-    font-size: 12px;
-  }
-  
-  .episode-badge i {
-    width: 14px;
-    height: 14px;
   }
   
   .header-container {
@@ -2741,6 +2640,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
