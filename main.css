@@ -602,12 +602,6 @@ body.dark-mode .anime-card-title {
     gap: 12px;
   }
 
-  .status-badge {
-    height: 24px;
-    font-size: 10px;
-    padding-top: 3.5px;
-  }
-
   .anime-card-title {
     font-size: 14px !important;
     line-height: 1.6;
@@ -633,92 +627,9 @@ body.dark-mode .anime-card-title {
     gap: 10px;
   }
 
-  .status-badge {
-    height: 22px;
-    font-size: 9px;
-    padding-top: 3.5px;
-  }
-
   .episode-badge {
     font-size: 14px;
     padding: 3px 7px;
-  }
-}
-
-@media (max-width: 480px) {
-  .status-badge {
-    height: 24px;
-    font-size: 10px;
-    margin-top: -2.5px;    /* thoda aur upar */
-  }
-}
-
-@media (max-width: 375px) {
-  .status-badge {
-    height: 22px;
-    font-size: 9px;
-    margin-top: -1.5px;
-  }
-}
-/* ============================================
-   DESKTOP STATUS RIBBON (CLEAN & CENTERED)
-   ============================================ */
-
-@media (min-width: 769px) {
-
-  .anime-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-  }
-
-  .badge-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 140px;
-    height: 140px;
-    overflow: hidden;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  .status-badge {
-    position: absolute;
-    top: 28px;
-    left: -48px;
-
-    width: 180px;
-    height: 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: #ffffff;
-    white-space: nowrap;
-
-    line-height: 1;
-    padding: 0;
-
-    /* 🔑 Desktop perfect alignment */
-    transform: rotate(-45deg);
-    transform-origin: center;
-
-    border-radius: 0; /* sharp ribbon */
-    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-  }
-
-  .status-badge.ongoing {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-  }
-
-  .status-badge.completed {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
   }
 }
 /* ============================================
@@ -2711,6 +2622,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
