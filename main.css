@@ -439,7 +439,7 @@ body.dark-mode .search-toggle {
   position: absolute;
   top: 0;
   left: 0;
-  width: 120px;
+  width: 170px;
   height: 120px;
   overflow: hidden;
   z-index: 5;
@@ -459,7 +459,7 @@ body.dark-mode .search-toggle {
   justify-content: center;
 
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #ffffff;
@@ -649,7 +649,67 @@ body.dark-mode .anime-card-title {
     margin-top: -1.5px;
   }
 }
+/* ============================================
+   DESKTOP STATUS RIBBON (CLEAN & CENTERED)
+   ============================================ */
 
+@media (min-width: 769px) {
+
+  .anime-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .badge-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .status-badge {
+    position: absolute;
+    top: 28px;
+    left: -48px;
+
+    width: 180px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+    white-space: nowrap;
+
+    line-height: 1;
+    padding: 0;
+
+    /* 🔑 Desktop perfect alignment */
+    transform: rotate(-45deg);
+    transform-origin: center;
+
+    border-radius: 0; /* sharp ribbon */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  }
+
+  .status-badge.ongoing {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  }
+
+  .status-badge.completed {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+}
 /* ============================================
    HEADER STYLES
    ============================================ */
@@ -2640,6 +2700,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
