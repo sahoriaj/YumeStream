@@ -812,16 +812,16 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.5s;
 }
 
-/* Play Overlay */
+/* ============================================
+   PLAY OVERLAY
+   ============================================ */
 .play-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -855,227 +855,178 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 /* ============================================
-   DIAGONAL RIBBON BADGE
+   DIAGONAL RIBBON BADGE (DESKTOP BASE)
    ============================================ */
-
-/* Badge Container - Creates the clipping area */
 .badge-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    z-index: 10;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
 }
 
-/* Status Badge - Diagonal Ribbon */
 .status-badge {
-    position: absolute;
-    top: 20px;
-    left: -35px;
-    min-width: 140px;
-    width: auto;
-    height: 24px;
-    padding: 0 15px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    line-height: 1;
-    color: #ffffff;
-    white-space: nowrap;
-    
-    transform: rotate(-45deg);
-    transform-origin: center;
-    
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-    pointer-events: auto;
+  position: absolute;
+  top: 20px;
+  left: -35px;
+  min-width: 140px;
+  height: 24px;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  white-space: nowrap;
+
+  transform: rotate(-45deg);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Completed Status - Red Ribbon */
 .status-badge.completed {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
+  background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
-/* Ongoing Status - Purple Ribbon */
 .status-badge.ongoing {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
-
-
 
 /* ============================================
    CARD INFO & TITLE
    ============================================ */
 .anime-card-info {
-    padding: 12px 6px 8px;
-    background: transparent;
+  padding: 12px 6px 8px;
 }
 
 .anime-card-title {
-    font-size: 15px !important;
-    font-weight: 600;
+  font-size: 15px !important;
+  font-weight: 600;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 
-    line-height: 1.5;          /* 🔑 slightly more space */
-    height: auto;              /* 🔑 very important */
-
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
-    padding: 0 3px;
-}
-
-@media (max-width: 480px) {
-    .anime-card-title {
-        font-size: 14px !important;
-        line-height: 1.6;   /* 🔥 THIS fixes half cut */
-    }
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0 3px;
 }
 
 /* Light Mode */
 body.light-mode .anime-card-title,
 body:not(.dark-mode) .anime-card-title {
-    color: #1f2937;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  color: #1f2937;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
 
 /* Dark Mode */
 body.dark-mode .anime-card-title {
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE (TABLET)
    ============================================ */
-
-/* Tablet & Medium Screens */
 @media (max-width: 768px) {
-    .anime-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-        gap: 15px;
-    }
-    
-    .badge-container {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .status-badge {
-        top: 18px;
-        left: -32px;
-        min-width: 130px;
-        width: auto;
-        height: 22px;
-        padding: 0 12px;
-        font-size: 9px;
-        letter-spacing: 0.4px;
-        text-align: center;
-    }
-    
-    .play-icon {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .play-icon i {
-        width: 20px;
-        height: 20px;
-    }
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+  }
+
+  .play-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .play-icon i {
+    width: 20px;
+    height: 20px;
+  }
 }
 
-/* Mobile Screens */
+/* ============================================
+   MOBILE FIX (IMPORTANT)
+   ============================================ */
 @media (max-width: 480px) {
-    .anime-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 12px;
-    }
-    
-    .badge-container {
-        width: 95px;
-        height: 95px;
-    }
-    
-    .status-badge {
-        top: 20px;
-        left: -42px;
-        width: 135px;
-        height: 24px;
-        font-size: 9px;
-        letter-spacing: 0.4px;
-        text-align: center;
-    }
-    
-    .anime-card-title {
-        font-size: 15px !important;
-        min-height: 32px;
-    }
-    
-    .play-icon {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .play-icon i {
-        width: 18px;
-        height: 18px;
-    }
+
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+
+  /* Bigger clipping area */
+  .badge-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Rebalanced ribbon math */
+  .status-badge {
+    top: 16px;
+    left: -48px;
+    width: 120px;
+    min-width: unset;
+    height: 22px;
+    padding: 0;
+    font-size: 9px;
+    letter-spacing: 0.3px;
+  }
+
+  .anime-card-title {
+    font-size: 14px !important;
+    line-height: 1.6;
+  }
+
+  .play-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .play-icon i {
+    width: 18px;
+    height: 18px;
+  }
 }
 
-/* Small Mobile Screens */
+/* ============================================
+   VERY SMALL PHONES
+   ============================================ */
 @media (max-width: 375px) {
-    .anime-grid {
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-        gap: 10px;
-    }
-    
-    .badge-container {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .status-badge {
-        top: 18px;
-        left: -40px;
-        width: 130px;
-        height: 22px;
-        font-size: 8px;
-        letter-spacing: 0.3px;
-        text-align: center;
-    }
-    
-    .episode-badge {
-        font-size: 10px;
-        padding: 2px 5px;
-    }
-    
-    .feature-badge::before {
-        font-size: 20px;
-    }
-}
 
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+  }
+
+  .badge-container {
+    width: 110px;
+    height: 110px;
+  }
+
+  .status-badge {
+    top: 14px;
+    left: -44px;
+    width: 110px;
+    height: 20px;
+    font-size: 8px;
+  }
+}
 /* =========================
    HOT / NEW FIRE ICON
    ========================= */
@@ -2796,6 +2747,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
