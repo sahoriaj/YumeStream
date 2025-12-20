@@ -454,27 +454,29 @@ body.dark-mode .search-toggle {
 
 .status-badge {
   position: absolute;
-  top: -10px;
-  left: -48px;
+  top: -12px;
+  left: -50px;
 
   width: 165px;
   height: 26px;
 
-  /* 🔥 REAL CENTERING METHOD */
-  text-align: center;
-  line-height: 25px;          /* SAME as height */
-  
+  /* ✅ REAL CENTERING (NO LINE-HEIGHT) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   color: #ffffff;
 
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   transform: rotate(-45deg);
 
-  padding: 0;                 /* IMPORTANT */
+  padding: 0;
   border-radius: 0;
+  box-sizing: border-box;
 }
 
 /* Status colors */
@@ -486,11 +488,12 @@ body.dark-mode .search-toggle {
   background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
+/* 📱 Mobile fix */
 @media (max-width: 480px) {
   .status-badge {
+    width: 155px;
     height: 24px;
-    line-height: 24px;   /* 🔑 THIS is the key */
-    font-size: 5px;
+    font-size: 8px;
     left: -54px;
   }
 }
@@ -2622,6 +2625,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
