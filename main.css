@@ -454,7 +454,7 @@ body.dark-mode .search-toggle {
 
 .status-badge {
   position: absolute;
-  top: 1px;
+  top: 10px;
   left: -48px;
 
   width: 165px;
@@ -491,7 +491,7 @@ body.dark-mode .search-toggle {
     height: 24px;
     line-height: 24px;   /* 🔑 THIS is the key */
     font-size: 10px;
-    left: -55px;
+    left: -45px;
   }
 }
 
@@ -2711,6 +2711,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
