@@ -754,7 +754,7 @@ body {
 
 .anime-card {
   background: transparent;
-  overflow: hidden;
+  overflow: visible; /* CRITICAL: Changed from hidden to visible */
   transition: all 0.3s ease;
   text-decoration: none;
   color: #333;
@@ -765,7 +765,7 @@ body {
 .anime-card-image {
   position: relative;
   padding-top: 140%;
-  overflow: hidden;
+  overflow: hidden; /* Keep hidden only on the image container */
   background: #f0f0f0;
   border-radius: 12px;
 }
@@ -824,44 +824,42 @@ body {
 }
 
 /* ============================================
-   STATUS RIBBON (ONGOING / COMPLETED) - FIXED
+   STATUS RIBBON (ONGOING / COMPLETED) - FINAL FIX
    ============================================ */
-.anime-card {
-  position: relative;
-  overflow: visible;
-}
-
 .badge-container {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 6;
   pointer-events: none;
+  overflow: visible;
 }
 
 .status-badge {
   position: absolute;
-  top: 8px;
-  left: -35px;
+  top: 10px;
+  left: -28px; /* MOVED MORE TO THE RIGHT */
   
-  width: 120px;
-  height: 24px;
+  width: 110px; /* REDUCED WIDTH FOR BETTER FIT */
+  height: 22px;
   
   display: flex;
   align-items: center;
   justify-content: center;
   
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 8.5px;
+  font-weight: 800; /* INCREASED WEIGHT */
+  letter-spacing: 1.2px; /* INCREASED SPACING */
   text-transform: uppercase;
   color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   transform: rotate(-45deg);
   transform-origin: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
   
   padding: 0;
   border-radius: 0;
@@ -876,39 +874,109 @@ body {
   background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
-/* Tablet adjustments */
-@media (max-width: 768px) {
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
   .status-badge {
-    top: 6px;
-    left: -38px;
+    top: 12px;
+    left: -26px;
+    width: 115px;
+    height: 24px;
+    font-size: 9px;
+  }
+}
+
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .status-badge {
+    top: 10px;
+    left: -28px;
     width: 110px;
+    height: 22px;
+    font-size: 8.5px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+  }
+  
+  .status-badge {
+    top: 9px;
+    left: -30px;
+    width: 105px;
     height: 20px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Mobile Landscape / Small Tablet (481px - 767px) */
+@media (max-width: 767px) {
+  .anime-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+  
+  .status-badge {
+    top: 8px;
+    left: -32px;
+    width: 100px;
+    height: 19px;
     font-size: 7.5px;
+    letter-spacing: 0.9px;
+  }
+}
+
+/* Mobile Portrait (321px - 480px) */
+@media (max-width: 480px) {
+  .anime-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .status-badge {
+    top: 7px;
+    left: -34px;
+    width: 95px;
+    height: 18px;
+    font-size: 7px;
     letter-spacing: 0.8px;
   }
 }
 
-/* Mobile adjustments */
-@media (max-width: 480px) {
+/* Small Mobile (320px - 375px) */
+@media (max-width: 375px) {
+  .anime-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
   .status-badge {
-    top: 5px;
-    left: -40px;
-    width: 105px;
-    height: 18px;
-    font-size: 7px;
-    letter-spacing: 0.6px;
+    top: 6px;
+    left: -36px;
+    width: 90px;
+    height: 17px;
+    font-size: 6.5px;
+    letter-spacing: 0.7px;
   }
 }
 
-/* Very small phones */
-@media (max-width: 375px) {
+/* Very Small Mobile (< 320px) */
+@media (max-width: 319px) {
   .status-badge {
-    top: 4px;
-    left: -42px;
-    width: 100px;
+    top: 5px;
+    left: -38px;
+    width: 85px;
     height: 16px;
-    font-size: 6.5px;
-    letter-spacing: 0.5px;
+    font-size: 6px;
+    letter-spacing: 0.6px;
   }
 }
 
@@ -991,14 +1059,9 @@ body.dark-mode .anime-card-title {
 }
 
 /* ============================================
-   TABLET
+   TABLET ADJUSTMENTS
    ============================================ */
 @media (max-width: 768px) {
-  .anime-grid {
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    gap: 15px;
-  }
-
   .play-icon {
     width: 50px;
     height: 50px;
@@ -1008,17 +1071,23 @@ body.dark-mode .anime-card-title {
     width: 20px;
     height: 20px;
   }
+  
+  .feature-badge {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .feature-badge svg,
+  .feature-badge .fire-icon {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 /* ============================================
-   MOBILE
+   MOBILE ADJUSTMENTS
    ============================================ */
 @media (max-width: 480px) {
-  .anime-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 12px;
-  }
-
   .anime-card-title {
     font-size: 14px !important;
     line-height: 1.6;
@@ -1033,23 +1102,46 @@ body.dark-mode .anime-card-title {
     width: 18px;
     height: 18px;
   }
+  
+  .feature-badge {
+    width: 26px;
+    height: 26px;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .feature-badge svg,
+  .feature-badge .fire-icon {
+    width: 13px;
+    height: 13px;
+  }
+  
+  .episode-badge {
+    font-size: 12px;
+    padding: 3px 7px;
+  }
 }
 
 /* ============================================
    VERY SMALL PHONES
    ============================================ */
 @media (max-width: 375px) {
-  .anime-grid {
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 10px;
-  }
-
   .episode-badge {
-    font-size: 14px;
-    padding: 3px 7px;
+    font-size: 11px;
+    padding: 3px 6px;
   }
-}
-/* ============================================
+  
+  .feature-badge {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .feature-badge svg,
+  .feature-badge .fire-icon {
+    width: 12px;
+    height: 12px;
+  }
+}/* ============================================
    STATS BAR
    ============================================ */
 .stats-bar {
@@ -2647,6 +2739,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
