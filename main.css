@@ -490,8 +490,8 @@ body.dark-mode .search-toggle {
   .status-badge {
     height: 24px;
     line-height: 24px;   /* 🔑 THIS is the key */
-    font-size: 10px;
-    left: -48px;
+    font-size: 5px;
+    left: -54px;
   }
 }
 
@@ -2622,6 +2622,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
