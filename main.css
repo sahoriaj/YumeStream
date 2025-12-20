@@ -454,7 +454,7 @@ body.dark-mode .search-toggle {
 
 .status-badge {
   position: absolute;
-  top: 10px;
+  top: 1px;
   left: -48px;
 
   width: 165px;
@@ -2622,6 +2622,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
