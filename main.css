@@ -823,6 +823,14 @@ body {
   50% { transform: scale(1.1); }
 }
 
+/* Upcoming Status - Orange/Yellow */
+.status-badge.upcoming {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
 /* Upcoming Badge Animation - Shimmer Effect */
 .status-badge.upcoming::before {
     content: '';
@@ -2610,6 +2618,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
