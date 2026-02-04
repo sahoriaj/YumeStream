@@ -79,132 +79,6 @@ body {
   height: 1em;
 }
 
-/* Fix for header controls icons */
-.header-controls [data-lucide] {
-  width: 24px;
-  height: 24px;
-}
-
-/* Fix for navigation menu icons */
-.nav-menu [data-lucide] {
-  width: 18px;
-  height: 18px;
-}
-
-/* Fix for search button icon */
-.search-box button [data-lucide] {
-  width: 18px;
-  height: 18px;
-}
-
-/* Fix for section header icons */
-.section-header [data-lucide] {
-  width: 20px;
-  height: 20px;
-}
-
-/* Fix for footer icons */
-.footer-heading [data-lucide] {
-  width: 18px;
-  height: 18px;
-}
-
-.footer-link [data-lucide] {
-  width: 14px;
-  height: 14px;
-}
-
-.social-link [data-lucide] {
-  width: 20px;
-  height: 20px;
-}
-
-/* Fix for pagination icons */
-.pagination [data-lucide] {
-  width: 16px;
-  height: 16px;
-}
-
-/* Fix for play icon */
-.play-icon [data-lucide] {
-  width: 24px;
-  height: 24px;
-}
-
-/* Fix for popup close button */
-.popup-close-btn [data-lucide] {
-  width: 20px;
-  height: 20px;
-}
-
-/* Ensure icons are visible in both themes */
-[data-lucide] {
-  color: inherit;
-}
-/* ============================================
-   NAVIGATION
-   ============================================ */
-.nav-toggle {
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.nav-menu {
-  position: absolute;
-  top: 70px;
-  left: -240px;
-  width: 130px;
-  background: #02be86;
-  padding: 15px 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  z-index: 99999;
-  transition: left 0.35s ease;
-  overflow: hidden;
-  border-radius: 0 12px 12px 0;
-}
-
-.nav-menu.active {
-  left: 10px;
-}
-
-.nav-menu ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.nav-menu ul li {
-  margin-bottom: 12px;
-}
-
-.nav-menu ul li a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 8px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.nav-menu ul li a:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateX(5px);
-}
-
-.nav-menu ul li a i {
-  color: #fff;
-  width: 18px;
-  height: 18px;
-  transition: transform 0.2s ease;
-}
-
 /* ============================================
    HERO & PAGE HEADER
    ============================================ */
@@ -306,10 +180,6 @@ body {
   gap: 8px;
   transition: all 0.3s;
 }
-
-.view-all:hover {
-  transform: translateX(5px);
-}
 /* ============================================
    STATS BAR
    ============================================ */
@@ -375,13 +245,6 @@ body {
   justify-content: center;
 }
 
-.pagination a:hover {
-  background: #667eea;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
 .pagination .active {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
@@ -420,86 +283,6 @@ body {
 .empty-state p {
   color: #999;
   font-size: 16px;
-}
-
-/* ============================================
-   FREE USER POPUP
-   ============================================ */
-.free-user-popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 999999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.free-user-popup-overlay.show {
-  display: flex;
-  opacity: 1;
-}
-
-.free-user-popup-content {
-  position: relative;
-  background: #fff;
-  border-radius: 15px;
-  padding: 30px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  animation: popupSlideIn 0.4s ease;
-}
-
-@keyframes popupSlideIn {
-  from {
-    transform: scale(0.8) translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-}
-
-.popup-close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #ff4757;
-  color: #fff;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-  z-index: 10;
-}
-
-.popup-close-btn i {
-  width: 20px;
-  height: 20px;
-}
-
-.popup-close-btn:hover {
-  background: #ff3838;
-  transform: rotate(90deg);
-}
-
-.popup-ad-inner {
-  margin-top: 20px;
 }
 
 /* ============================================
@@ -1902,6 +1685,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
