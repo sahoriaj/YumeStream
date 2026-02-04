@@ -1284,12 +1284,6 @@ body.dark-mode .footer-description {
     font-size: 12px;
   }
 }
-
-/* Fix container overflow issues */
-.container {
-  overflow: visible !important;
-}
-
 /* Container */
 .payment-container {
     max-width: 900px;
@@ -2205,6 +2199,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
