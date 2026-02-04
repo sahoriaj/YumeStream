@@ -5,9 +5,10 @@
 }
 
 .container {
-    max-width: 1400px;
+    width: 100% !important;  /* Reduces large side spaces seen in your screenshot */
+    max-width: 1400px; 
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 /* Light mode (default) */
 body {
@@ -2303,6 +2304,7 @@ body.dark-mode .comparison-table tbody tr:hover {
         page-break-inside: avoid;
     }
 }
+
 
 
 
