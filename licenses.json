@@ -1,0 +1,13 @@
+{
+  "licenses": [
+    {
+      "key": "DEMO-1234-ABCD-5678",
+      "domain": "anisora.cc",
+      "issued": "2026-01-01",
+      "expires": null,
+      "active": true,
+      "buyer": "John Doe"
+    }
+  ],
+  "updated": "2026-02-25"
+}
