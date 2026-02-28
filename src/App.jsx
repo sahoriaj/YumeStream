@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { UserProvider } from './lib/UserContext'
 import Header    from './components/Header'
 import AuthModal from './components/AuthModal'
@@ -10,34 +10,41 @@ import CartPage     from './pages/CartPage'
 import WishlistPage from './pages/WishlistPage'
 import CheckoutPage from './pages/CheckoutPage'
 import ProfilePage  from './pages/ProfilePage'
+import LoginPage    from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
 
 function AppInner() {
-  const [authOpen, setAuthOpen]   = useState(false)
+  // authModal is ONLY used when user clicks "Buy Now" while not logged in
+  // Normal Sign In / Register go through dedicated /login and /register pages
+  const [authModal, setAuthModal] = useState(false)
   const { toasts, show: toast }   = useToast()
-  const navigate = useNavigate()
 
-  const dismissToast = (id) => {}
-
-  const openAuth = (reason, productId) => {
-    setAuthOpen(true)
-  }
+  const openAuthModal = () => setAuthModal(true)
 
   return (
     <>
-      <Header onSignIn={() => setAuthOpen(true)} />
+      <Header />
 
       <Routes>
-        <Route path="/"        element={<StorePage    onRequireAuth={openAuth} />} />
-        <Route path="/cart"    element={<CartPage />} />
+        {/* Main pages */}
+        <Route path="/"         element={<StorePage    onRequireAuth={openAuthModal} />} />
+        <Route path="/cart"     element={<CartPage />} />
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/checkout" element={<CheckoutPage onToast={toast} />} />
-        <Route path="/profile" element={<ProfilePage onToast={toast} />} />
-        <Route path="*"        element={<StorePage    onRequireAuth={openAuth} />} />
+        <Route path="/profile"  element={<ProfilePage  onToast={toast} />} />
+
+        {/* Dedicated auth pages */}
+        <Route path="/login"    element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+
+        {/* Catch-all */}
+        <Route path="*"         element={<StorePage    onRequireAuth={openAuthModal} />} />
       </Routes>
 
-      {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
+      {/* Auth modal — only shown on Buy Now click when not logged in */}
+      {authModal && <AuthModal onClose={() => setAuthModal(false)} />}
 
-      <ToastContainer toasts={toasts} onDismiss={dismissToast} />
+      <ToastContainer toasts={toasts} onDismiss={() => {}} />
     </>
   )
 }
