@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
-import { X, Mail, Lock, UserPlus, LogIn } from 'lucide-react'
+import { Mail, Lock, LogIn, UserPlus, Zap, ArrowRight } from 'lucide-react'
 import { auth } from '../firebase'
 import { createUserDoc } from '../lib/store'
 
@@ -14,14 +15,21 @@ const ERRS = {
   'auth/invalid-credential':    'Wrong email or password.',
 }
 
-export default function AuthModal({ onClose, initialTab = 'login' }) {
-  const [tab, setTab]       = useState(initialTab)
-  const [email, setEmail]   = useState('')
-  const [pass, setPass]     = useState('')
-  const [error, setError]   = useState('')
+/**
+ * mode: 'login' | 'register'
+ * Used by both /login and /register pages.
+ * Also used inside AuthModal (pass onSuccess to close modal).
+ */
+export default function AuthForm({ mode = 'login', onSuccess }) {
+  const [email, setEmail]     = useState('')
+  const [pass, setPass]       = useState('')
+  const [error, setError]     = useState('')
   const [loading, setLoading] = useState(false)
+  const navigate  = useNavigate()
+  const location  = useLocation()
 
-  const reset = t => { setTab(t); setError(''); }
+  // After login, redirect back to where they came from (or store)
+  const from = location.state?.from || '/'
 
   const handleLogin = async () => {
     setError('')
@@ -29,9 +37,11 @@ export default function AuthModal({ onClose, initialTab = 'login' }) {
     try {
       setLoading(true)
       await signInWithEmailAndPassword(auth, email, pass)
-      onClose()
-    } catch (e) { setError(ERRS[e.code] || 'Something went wrong.') }
-    finally    { setLoading(false) }
+      if (onSuccess) onSuccess()
+      else navigate(from, { replace: true })
+    } catch (e) {
+      setError(ERRS[e.code] || 'Something went wrong. Please try again.')
+    } finally { setLoading(false) }
   }
 
   const handleRegister = async () => {
@@ -42,58 +52,105 @@ export default function AuthModal({ onClose, initialTab = 'login' }) {
       setLoading(true)
       const cred = await createUserWithEmailAndPassword(auth, email, pass)
       await createUserDoc(cred.user.uid, email)
-      onClose()
-    } catch (e) { setError(ERRS[e.code] || 'Something went wrong.') }
-    finally    { setLoading(false) }
+      if (onSuccess) onSuccess()
+      else navigate(from, { replace: true })
+    } catch (e) {
+      setError(ERRS[e.code] || 'Something went wrong. Please try again.')
+    } finally { setLoading(false) }
   }
 
-  const onKey = e => { if (e.key === 'Enter') tab === 'login' ? handleLogin() : handleRegister() }
+  const onKey = e => {
+    if (e.key === 'Enter') mode === 'login' ? handleLogin() : handleRegister()
+  }
+
+  const isLogin = mode === 'login'
 
   return (
-    <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal-box">
-        <button className="modal-close" onClick={onClose}><X size={16} /></button>
+    <div className="auth-page">
+      <div className="auth-card">
 
-        <div className="modal-logo">
-          <div className="modal-logo-icon"><Zap size={22} color="var(--accent)" /></div>
-          <h3>Anime<span style={{ color: 'var(--accent)' }}>Flix</span></h3>
-          <p>Sign in to purchase and access your downloads</p>
+        {/* Logo */}
+        <div className="auth-page-logo">
+          <div className="auth-page-logo-icon">
+            <Zap size={26} color="var(--accent)" />
+          </div>
+          <h1>Anime<span style={{ color: 'var(--accent)' }}>Flix</span></h1>
+          <p>{isLogin ? 'Welcome back — sign in to your account' : 'Create your account to get started'}</p>
         </div>
 
+        {/* Tab switcher */}
         <div className="auth-tabs">
-          <button className={`auth-tab ${tab === 'login' ? 'active' : ''}`} onClick={() => reset('login')}>
+          <Link
+            to="/login"
+            state={{ from }}
+            className={`auth-tab ${isLogin ? 'active' : ''}`}
+            replace
+          >
             <LogIn size={13} /> Sign In
-          </button>
-          <button className={`auth-tab ${tab === 'register' ? 'active' : ''}`} onClick={() => reset('register')}>
+          </Link>
+          <Link
+            to="/register"
+            state={{ from }}
+            className={`auth-tab ${!isLogin ? 'active' : ''}`}
+            replace
+          >
             <UserPlus size={13} /> Register
-          </button>
+          </Link>
         </div>
 
+        {/* Error */}
         {error && <div className="auth-error">{error}</div>}
 
+        {/* Fields */}
         <div className="field">
           <label><Mail size={12} /> Email</label>
-          <input type="email" placeholder="you@example.com" value={email}
-            onChange={e => setEmail(e.target.value)} onKeyDown={onKey} autoFocus />
+          <input
+            type="email"
+            placeholder="you@example.com"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            onKeyDown={onKey}
+            autoFocus
+          />
         </div>
         <div className="field">
           <label><Lock size={12} /> Password</label>
-          <input type="password" placeholder={tab === 'register' ? 'Min 6 characters' : 'Your password'}
-            value={pass} onChange={e => setPass(e.target.value)} onKeyDown={onKey} />
+          <input
+            type="password"
+            placeholder={isLogin ? 'Your password' : 'Min 6 characters'}
+            value={pass}
+            onChange={e => setPass(e.target.value)}
+            onKeyDown={onKey}
+          />
         </div>
 
+        {/* Submit */}
         <button
-          className="btn btn-accent"
-          style={{ width: '100%', padding: '13px', borderRadius: '10px', marginTop: '4px', justifyContent: 'center' }}
-          onClick={tab === 'login' ? handleLogin : handleRegister}
+          className="btn btn-accent auth-submit-btn"
+          onClick={isLogin ? handleLogin : handleRegister}
           disabled={loading}
         >
           {loading
             ? 'Please wait…'
-            : tab === 'login'
-            ? 'Sign In & Continue'
-            : 'Create Account & Continue'}
+            : isLogin
+            ? <><LogIn size={15} /> Sign In <ArrowRight size={14} /></>
+            : <><UserPlus size={15} /> Create Account <ArrowRight size={14} /></>
+          }
         </button>
+
+        {/* Switch link */}
+        <div className="auth-switch">
+          {isLogin ? (
+            <>Don't have an account?{' '}
+              <Link to="/register" state={{ from }}>Create one</Link>
+            </>
+          ) : (
+            <>Already have an account?{' '}
+              <Link to="/login" state={{ from }}>Sign in</Link>
+            </>
+          )}
+        </div>
+
       </div>
     </div>
   )
