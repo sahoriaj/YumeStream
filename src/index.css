@@ -730,3 +730,60 @@ body::after {
   .profile-stats { grid-template-columns: 1fr 1fr; }
   .modal-box { padding: 28px 18px; }
 }
+
+/* ══════════════════════════════════════════
+   HEADER AUTH BUTTONS
+══════════════════════════════════════════ */
+.header-auth-btns {
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ══════════════════════════════════════════
+   AUTH PAGES (/login and /register)
+══════════════════════════════════════════ */
+.auth-page {
+  position: relative; z-index: 1;
+  min-height: calc(100vh - 62px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 20px;
+}
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: 22px;
+  padding: 40px 36px;
+  width: 100%; max-width: 420px;
+  box-shadow: 0 0 80px rgba(59,158,255,0.07);
+  animation: popUp .35s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+.auth-page-logo {
+  text-align: center; margin-bottom: 28px;
+}
+.auth-page-logo-icon {
+  width: 54px; height: 54px; border-radius: 16px;
+  background: var(--glow-b); border: 1px solid rgba(59,158,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.auth-page-logo h1 {
+  font-family: var(--fh); font-size: 26px; font-weight: 800; margin-bottom: 6px;
+}
+.auth-page-logo p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.auth-submit-btn {
+  width: 100%; justify-content: center;
+  padding: 13px; border-radius: 10px; margin-top: 4px;
+  font-size: 12px;
+}
+.auth-switch {
+  text-align: center; margin-top: 18px;
+  font-size: 13px; color: var(--muted);
+}
+.auth-switch a {
+  color: var(--accent); text-decoration: none; font-weight: 600;
+}
+.auth-switch a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .auth-card { padding: 28px 18px; }
+}
