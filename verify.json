@@ -1,9 +1,21 @@
 {
-  "licenses": [
-    {
-      "key": "YS-12345",
-      "domain": "yumestream.in",
-      "status": "active"
-    }
-  ]
+"licenses": [
+{
+"key": "Q7XM-4L9T-Z2KF-8PVD",
+"domain": "anisora.cc",
+"issued": "2026-03-06",
+"expires": null,
+"active": true,
+"buyer": "John Doe"
+},
+{
+"key": "K9F4-XT2Q-7ZLP-8V3M",
+"domain": "donghualand.vip",
+"issued": "2026-03-06",
+"expires": null,
+"active": true,
+"buyer": "Daoodfaiz"
+}
+],
+"updated": "2026-03-06"
 }
