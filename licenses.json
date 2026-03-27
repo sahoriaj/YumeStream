@@ -1,21 +1,29 @@
 {
-"licenses": [
-{
-"key": "Q7XM-4L9T-Z2KF-8PVD",
-"domain": "animeflix.animewebtemplate.xyz",
-"issued": "2026-03-06",
-"expires": null,
-"active": true,
-"buyer": "John Doe"
-},
-{
-"key": "K9F4-XT2Q-7ZLP-8V3M",
-"domain": "donghualand.vip",
-"issued": "2026-03-06",
-"expires": null,
-"active": true,
-"buyer": "Daoodfaiz"
-}
-],
-"updated": "2026-03-06"
+  "licenses": [
+    {
+      "key": "Q7XM-4L9T-Z2KF-8PVD",
+      "domain": "animeflix.animewebtemplate.xyz",
+      "issued": "2026-03-06",
+      "expires": null,
+      "active": true,
+      "buyer": "John Doe"
+    },
+    {
+      "key": "K9F4-XT2Q-7ZLP-8V3M",
+      "domain": "donghualand.vip",
+      "issued": "2026-03-06",
+      "expires": null,
+      "active": true,
+      "buyer": "Daoodfaiz"
+    },
+    {
+      "key": "Y1LK-9P8R-3XZT-6QWE",
+      "domain": "donghua.pro",
+      "issued": "2026-03-06",
+      "expires": null,
+      "active": true,
+      "buyer": "yilaik"
+    }
+  ],
+  "updated": "2026-03-06"
 }
