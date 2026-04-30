@@ -9,6 +9,14 @@
       "buyer": "John Doe"
     },
     {
+  "key": "Z8QP-3N7X-5LKM-2VRT",
+  "domain": "nexuzdonghua.online",
+  "issued": "2026-04-30",
+  "expires": null,
+  "active": true,
+  "buyer": "New Client"
+},
+    {
       "key": "K9F4-XT2Q-7ZLP-8V3M",
       "domain": "donghualand.vip",
       "issued": "2026-03-06",
