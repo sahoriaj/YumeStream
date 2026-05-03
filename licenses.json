@@ -39,6 +39,22 @@
       "expires": null,
       "active": true,
       "buyer": "New Client"
+    },
+    {
+      "key": "N7DM-5K2P-8XQW-4LZT",
+      "domain": "9animetv.xyz",
+      "issued": "2026-03-06",
+      "expires": null,
+      "active": true,
+      "buyer": "New Client"
+    },
+    {
+      "key": "N7DM-5K2P-8XQW-4LZT",
+      "domain": "9anime.lat",
+      "issued": "2026-03-06",
+      "expires": null,
+      "active": true,
+      "buyer": "New Client"
     }
   ],
   "updated": "2026-03-06"
